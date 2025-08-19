@@ -37,7 +37,7 @@ ELSE()
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 ENDIF()
 
-option(BUILD_ROS_NODE "Build ROS node" ON)
+option(BUILD_ROS_NODE "Build ROS node" OFF)
 if(BUILD_ROS_NODE)
   ADD_DEFINITIONS(-DBUILD_ROS_NODE)
 endif(BUILD_ROS_NODE)
@@ -162,6 +162,7 @@ find_package(GTest REQUIRED)
 # GTEST_ROOT - (as a CMake or environment variable)
 #              The root directory of the gtest install prefix
 
+set(GTEST_ROOT /opt/gtest/install)
 include_directories(${GTEST_ROOT}/include)
 list(APPEND GTEST_LINK_LIBS
   ${GTEST_BOTH_LIBRARIES}
